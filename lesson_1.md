@@ -1,3 +1,8 @@
+*markdown*
+
+Setting previews for markdowns:
+Control+ shift+ m
+
 *Creating header sizes:*
 
 
@@ -43,8 +48,11 @@ everything_else.md as a Chapter
 
 In terminal:
 mkdir - to create folder
+
 touch - to create file
+
 git init - creates a space where github will be initialzied
+
 atom . - means to open all into atom
 git add whatever.md - add the files onto stage before saving into Github
 git status - tells you the stage where the file you placed aka the changes you have done
