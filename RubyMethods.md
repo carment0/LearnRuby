@@ -74,7 +74,7 @@ def add_and_subtract(n1, n2)
   sub = n1 + n2
     return [add, sub]
 end
-
+ 
 results = add_substract(2, 2)
 puts results[0]
 puts results[1]

@@ -169,5 +169,4 @@ puts animal1.legs
 ## Inheritance
 
 ## Subclass overriding
-
 ## Accessing the superclass
