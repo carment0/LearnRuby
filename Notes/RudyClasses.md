@@ -151,22 +151,29 @@ puts animal1.legs
  - Shorthand – set the values automatically
 
 ``` ruby
-def initialize
-  @legs = 4
-  @arms = 0
+def initialize(noise, legs, arms)
+  @noise = noise
+  @legs = legs
+  @arms = arms
 end
 
-animal1= Animal.new
+animal1= Animal.new("moo!", 4, 0)
 puts animal1.legs
 ```
 
 ## Class methods
 
+
 ## Class attributes
+
 
 ## Class reader/writer methods
 
+
 ## Inheritance
 
+
 ## Subclass overriding
+
+
 ## Accessing the superclass

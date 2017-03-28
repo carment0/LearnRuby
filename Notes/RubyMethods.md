@@ -1,5 +1,7 @@
 # METHODS
-Defining and calling methods – when calling method no need for puts
+- When you call a method, use the format `object.method `
+- To the left of the dot is the noun; to the right of the dot is the verb
+- Defining and calling methods – when calling method no need for puts
 
 ``` ruby
 def some_name
@@ -74,7 +76,7 @@ def add_and_subtract(n1, n2)
   sub = n1 + n2
     return [add, sub]
 end
- 
+
 results = add_substract(2, 2)
 puts results[0]
 puts results[1]
@@ -87,3 +89,21 @@ puts results[1]
  - `array << 4 	=> 	array.<<(4)`
  - `array[2] 	=> 	array.[](2)`
  - `array[2] = ‘x’ 	=> 	array.[]=(2,’x’)`
+
+# numerical methods
+- abs : absolute value
+- even?, odd? : check number is even or odd, returns Booleans
+
+type conversion
+- floor : round float down
+- ceil : round float up
+- round : round float to the nearest integer
+- to_i : float to integer, round like `floor`
+- to_f : integer to float
+- to_s : creates string with numbers
+
+convenience methods
+- lcm :least common multiple of two numbers is the smallest nonzero number that is a multiple of both
+  - 3.lcm(9)
+- gcd :greatest common divisor is the largest positive integer that is a divisor of both numbers
+  - 9.gcd(3)
