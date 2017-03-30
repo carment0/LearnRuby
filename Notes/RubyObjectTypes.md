@@ -1,11 +1,11 @@
-## Ruby object types
-What are objects?
+# Ruby object types
+## What are objects?
 - object is fundamental building block in ruby
 - it can be things or abstract
 - objects are instances of a class
   - Example: Each student is an object or an instance of the class student. All unique but they have something in common
 
-Variable (not objects)
+## Variable (not objects)
 - allow us to easily reference objects
 - will be undefined or act like an object
 - needs to assign a value before using
@@ -24,16 +24,10 @@ first_variable = 1
 |local|`variable`|
 |block|`variable`|
 
-Integers
-- integer belong into subclasses
-- difference is how it is stored in memory
-    - fixnum vs bignum
+## Data structures
+- A data structure is a format for organizing and storing data.
 
-Floats
-- decimal numbers
-- for precision
-
-Strings
+### Strings
 - sequence of characters strung together
   - operations can be used in strings
 - single or double quotes
@@ -41,35 +35,78 @@ Strings
     - `\t`, `\n`, `#{___}`
     - to escape `/`
 
-Array
+### Array
 - ordered integer indexed collection of objects
-- any objects can go into arrays
-- array index start at 0
-- creating new array
+- one declares an array with square brackets `array_set = []`
+- an array starts with zero index
+- One can store items in an array by separating them with commas and enclosing them in square brackets
+  - Any object (strings, numbers, booleans, etc.) or combination of objects (including other arrays) can be stored in an array
+  - arrays can have heterogeneous arrays (those with different data types inside them)
+  - An array that includes another array is called a nested or two-dimensional array
+
+- One can access individual items in an array by appending to the array another set of square brackets enclosing the desired index
+  - One can also access array elements using negative indices. The last element of the array is at the -1 index, the penultimate is at -2, etc. With negative indices, you essentially start at the end of the array and work your way backward.
+  - One can access multiple elements in an array by using ranges instead of single indices. Doing so returns another array.
+  - to get the return value of a position
 ``` ruby
-array_set = []
+got_characters = ["Robb", "Sansa", "Arya", "Bran", "Rickon"]
+
+got_characters[0..2]
+=> ["Robb", "Sansa", "Arya"]
+
+got_characters[0...-1]
+=> ["Robb", "Sansa", "Arya", "Bran"]
 ```
+
+adding and assigning arrays
 - adding data set in array
 ``` ruby
-array_set = ["a", "b", "c"]
+blasphemous_characters = ["Robb", "Sansa", "Arya", "Bran", "Rickon"]
+blasphemous_characters[0] = "Rick"
+
+blasphemous_characters
+=> ["Rick", "Sansa", "Arya", "Bran", "Rickon"]
+
+# this is called multiple assignment
+blasphemous_characters[3..-1] = "Morty", "Snuffles"
+
+blasphemous_characters
+=> ["Rick", "Sansa", "Arya", "Morty", "Snuffles"]
+
+# assign elements to valueless array indices
+blasphemous_characters = ["Robb", "Sansa", "Arya", "Bran", "Rickon"]
+blasphemous_characters[blasphemous_characters.length] = "Morty"
+
+blasphemous_characters
+=> ["Robb", "Sansa", "Arya", "Bran", "Rickon", "Morty"]
+
+# The Ruby interpreter fills in the empty indices with nil
+blasphemous_characters[8] = "Rick"
+blasphemous_characters
+=> ["Robb", "Sansa", "Arya", "Bran", "Rickon", "Morty", nil, nil, "Rick"]
 ```
-- to get the return value of a position
-``` ruby
-array_set[1]
-=> "b"
-```
-- to change array data
-```ruby
-array_set[0] = "d"
-=> ["d", "b", "c"]
-```
+
 - appending data into an array
 ``` ruby
 array_set << "e"
 => ["d", "b", "c", "e"]
 ```
 
-Hashes
+#### array method
+- .first
+- .last
+
+## Integers
+- integer belong into subclasses
+- difference is how it is stored in memory
+    - fixnum vs bignum
+
+## Floats
+- decimal numbers
+- for precision
+
+
+## Hashes
 - unordered object indexed collection of object or key value pairs
 - array is used when order matters, hashes used when labeling matters
 - creating new hashes
@@ -91,7 +128,7 @@ heshes_set.index["Kevin"]
 => "first_name"
 ```
 
-Symbols
+## Symbols
 - a label to identify a piece of data
 - stored in memory one time and ruby will go back to use this labeling
 - not a variable
@@ -100,7 +137,7 @@ Symbols
 hashes_set = {:first_name => "Kevin", :last_name => "lowercase"}
 ```
 
-Booleans
+## Booleans
 - true/false
 - comparison and logic operators
 
@@ -116,12 +153,17 @@ Booleans
 |and|`&&`|
 |or|`||`|
 
-Ranges
+## Ranges
 - inclusive range includes last number `1..10`
 - exclusive rang excludes last number `1...10`
 - splat operator gives all the numbers in range `num_ranges = *[___]`
 - ranges can be used for alphabet `"a".."f"`
+  - to convert back to array
+``` ruby
+("a"..."d").to_a
+=> ["a","b","c"]
+```
 
-Constants
+## Constants
 - similar to variables, point to objects
 -	use all capital letters
