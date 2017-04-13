@@ -98,7 +98,10 @@ loops until condition is met
 `retry if` – start the whole loop over
 
 ### While
--Although a while loop is technically an expression in that it evaluates to a single value, that value is always nil. If the while loop is within the body of a method definition, one can explicitly return a value from the loop (and the method) using the return keyword
+- Although a while loop is technically an expression in that it evaluates to a single value, that value is always nil. If the while loop is within the body of a method definition, one can explicitly return a value from the loop (and the method) using the return keyword
+- One can terminate the loop without returning from a method using the break keyword
+- The next keyword skips the loop ahead to its next iteration
+
 ``` ruby
 counter = 0
 
@@ -132,6 +135,22 @@ puts two_sum_to_zero?([1,-1])
 puts two_sum_to_zero?([1,2,3,4])
 ```
 
+``` ruby
+while true
+  puts "This is iteration number #{counter.to_s}!"
+  counter += 1
+  break counter if counter > 10 #the loop's value is the last value of counter
+end
+
+counter = 0
+while counter < 11
+  counter += 1
+  next if counter.odd?
+  puts "I only print even numbers from 1 to 10, including #{counter.to_s}."
+end
+```
+
+
 ### Until
 ``` ruby
 until Boolean
@@ -141,6 +160,15 @@ end
 
 ### Iterators
 - Similar to loop but instead of waiting to take control or break out of loop iterators is going to transverse a fixed set of data
+- An iterator is a method that repeats a set of instructions once for each element in its receiver
   - know the start and end point is
   - use a code block once for each item in a set of data
     - for each one `do` a process (loop)
+
+``` ruby
+traverse_me.each {|el| puts el}
+```
+
+- each - Accepts a block that it invokes once for each element in the receiver collection, passing that element as an argument; returns its receiver.
+- each_index - Accepts a block that it invokes once for each element in the receiver collection, passing each index as an argument; returns its receiver.
+- each_char - Accepts a block that it invokes once for each character in the receiver string, passing that character as an argument; returns its receiver.

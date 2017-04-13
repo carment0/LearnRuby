@@ -112,6 +112,8 @@ puts results[1]
 # numerical methods
 - abs : absolute value
 - even?, odd? : check number is even or odd, returns Booleans
+- factors(num) : which determines the factors of a number.
+- prime?(num) : which determines whether a number is prime.
 
 type conversion
 - floor : round float down
